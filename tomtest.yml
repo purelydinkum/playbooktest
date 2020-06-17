@@ -1,6 +1,10 @@
 ---
-- name: Touch the same file, but add/remove some permissions
-  file:
-    path: /tmp/tomtest/aaa
-    state: touch
-    mode: u+rw,g-wx,o-rwx
+- name: test
+hosts: all 
+
+  tasks:
+  - name: Touch the same file, but add/remove some permissions
+    file:
+      path: /tmp/tomtest/aaa
+      state: touch
+      mode: u+rw,g-wx,o-rwx
