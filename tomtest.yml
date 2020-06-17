@@ -1,6 +1,6 @@
 ---
 - name: test
-hosts: all 
+  hosts: all 
 
   tasks:
   - name: Touch the same file, but add/remove some permissions
