@@ -1,6 +1,7 @@
 ---
-- hosts:
-  - all
-- tasks:
-  - name: tomtest
-    command: mkdir /tmp/tomtest
+- name: tomtestplay
+  hosts: all
+  
+  tasks:
+    - name: tomtesttask
+      command: mkdir /tmp/tomtest
