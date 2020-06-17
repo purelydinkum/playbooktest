@@ -1,0 +1,10 @@
+---
+- name: git clone
+  hosts: '{{ hosts }}'
+
+  tasks:
+  - name: Touch the same file, but add/remove some permissions
+    git:
+      repo: 'https://github.com/purelydinkum/playbooktest'
+      dest: /tmp/testgit
+      clone: ye
