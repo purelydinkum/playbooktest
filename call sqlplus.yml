@@ -11,5 +11,5 @@
 
     - name: call sqlplus
       debug:
-      msg: echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
+      msg: 'test'
       #cammand:echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
