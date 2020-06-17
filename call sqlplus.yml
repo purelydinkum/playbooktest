@@ -3,13 +3,13 @@
   hosts: '{{ hosts }}'
 
   tasks:
-  - name: git clone
-    git:
-      repo: 'https://github.com/purelydinkum/playbooktest'
-      dest: /tmp/testgit
-      clone: yes
+    - name: git clone
+      git:
+        repo: 'https://github.com/purelydinkum/playbooktest'
+        dest: /tmp/testgit
+        clone: yes
 
-  - name: call sqlplus
-    debug:
-    msg: echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
-#    cammand:echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
+    - name: call sqlplus
+      debug:
+      msg: echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
+      #cammand:echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
