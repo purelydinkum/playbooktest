@@ -7,4 +7,4 @@
     git:
       repo: 'https://github.com/purelydinkum/playbooktest'
       dest: /tmp/testgit
-      clone: ye
+      clone: yes
