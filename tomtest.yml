@@ -1,3 +1,4 @@
+---
 - name: Touch the same file, but add/remove some permissions
   file:
     path: /tmp/tomtest/aaa
