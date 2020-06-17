@@ -1,0 +1,7 @@
+---
+- name: call sqlplus
+  hosts: '{{ hosts }}'
+
+  tasks:
+    - name: call sqlplus
+      cammand:echo {{ DB_PW }} > /tmp/teste
