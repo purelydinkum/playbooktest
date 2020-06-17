@@ -1,6 +1,6 @@
 ---
 - name: test
-  hosts: all 
+  hosts: 172.16.11.242 
 
   tasks:
   - name: Touch the same file, but add/remove some permissions
