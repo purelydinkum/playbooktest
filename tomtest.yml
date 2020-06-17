@@ -1,0 +1,6 @@
+---
+- hosts:
+  - all
+- tasks:
+  - name: tomtest
+    command: mkdir /tmp/tomtest
