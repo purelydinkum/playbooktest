@@ -1,6 +1,6 @@
 ---
 - name: test
-  hosts: 172.16.11.242 
+  hosts: '{{ hosts }}'
 
   tasks:
   - name: Touch the same file, but add/remove some permissions
