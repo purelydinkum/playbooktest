@@ -11,9 +11,23 @@
       file:
         path: "/OracalAutoDB/{{ project }}/"
         state: directory
-    - name: git clone
+        
+    - name: get .sql files(git clone)
       git:
         repo: "https://github.com/purelydinkum/{{ project }}"
         dest: "/OracalAutoDB/{{ project }}"
         clone: yes
         version: "{{ branch }}"
+        
+    - name: recurse .sql file add "/"
+      debug:
+        msg: lineinfile
+     
+    - name: call sqlplus
+      debug:
+        msg: echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
+        #cammand:echo /tmp/testgit/aaa.sql |.\sqlplus.exe "{{ DB_AC }}/{{ DB_PW }}@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host={{ DB_HOST }})(Port={{ DB_PORT }}))(CONNECT_DATA=(SID={{ DB_SID }})))" as {{ DB_ROLE }}
+
+    - name: return log
+      debug:
+        msg: return log
