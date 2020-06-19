@@ -4,9 +4,9 @@
 
   tasks:
     - name: init folder
-      file:
-        path: "/OracalAutoDB/{{ project }}/"
-        state: absent
-      file:
-        path: "/OracalAutoDB/{{ project }}/"
-        state: directory
+      - file:
+          path: "/OracalAutoDB/{{ project }}/"
+          state: absent
+      - file:
+          path: "/OracalAutoDB/{{ project }}/"
+          state: directory
