@@ -3,10 +3,11 @@
   hosts: "{{ hosts_name }}"
 
   tasks:
-    - name: init folder
-      - file:
-          path: "/OracalAutoDB/{{ project }}/"
-          state: absent
-      - file:
-          path: "/OracalAutoDB/{{ project }}/"
-          state: directory
+    - name: init folder(delete folder)
+      file:
+        path: "/OracalAutoDB/{{ project }}/"
+        state: absent
+    - name: init folder(create folder)
+      file:
+        path: "/OracalAutoDB/{{ project }}/"
+        state: directory
