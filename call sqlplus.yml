@@ -1,5 +1,5 @@
 ---
-- name: aaa{{ hosts_name }}
+- name: call sql*plus
   hosts: "{{ hosts_name }}"
 
   tasks:
