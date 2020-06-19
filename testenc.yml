@@ -4,4 +4,4 @@
 
   tasks:
     - name: test
-      command: echo '{{ DB_PW }}' > /tmp/teste
+      command: 'echo '{{ DB_PW }}' > /tmp/teste'
