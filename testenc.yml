@@ -1,9 +1,9 @@
 ---
 - name: call sqlplus
-  no_log: true
   hosts: '{{ hosts }}'
 
   tasks:
     - name: test
+      no_log: true
       shell: 
         cmd: echo '{{ DB_PW }}' > /tmp/teste
