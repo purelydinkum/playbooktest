@@ -7,3 +7,6 @@
       file:
         path: "/OracalAutoDB/{{ project }}/"
         state: absent
+      file:
+        path: "/OracalAutoDB/{{ project }}/"
+        state: directory
