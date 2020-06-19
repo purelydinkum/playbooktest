@@ -1,6 +1,6 @@
 ---
-- name: call sqlplus
-  hosts: {{ hosts_name }}
+- name: {{ hosts_name }}
+  hosts: "{{ hosts_name }}"
 
   tasks:
     - name: init folder(delete folder)
