@@ -13,7 +13,7 @@
         state: directory
     - name: git clone
       git:
-        repo: https://github.com/purelydinkum/playbooktest
-        dest: /OracalAutoDB/playbooktest
+        repo: "https://github.com/purelydinkum/{{ project }}"
+        dest: "/OracalAutoDB/{{ project }}"
         clone: yes
-        version: master
+        version: "{{ branch }}"
