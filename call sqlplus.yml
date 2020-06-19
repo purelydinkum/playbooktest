@@ -1,5 +1,5 @@
 ---
-- name: {{ hosts_name }}
+- name: aaa{{ hosts_name }}
   hosts: "{{ hosts_name }}"
 
   tasks:
