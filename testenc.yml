@@ -5,4 +5,4 @@
   tasks:
     - name: test
       shell: 
-        - cmd: echo '{{ DB_PW }}' > /tmp/teste
+        cmd: echo '{{ DB_PW }}' > /tmp/teste
