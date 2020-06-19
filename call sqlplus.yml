@@ -1,6 +1,6 @@
 ---
 - name: call sqlplus
-  hosts: '{{ hosts.name }}'
+  hosts: all
 
   tasks:
     - name: init folder
