@@ -5,17 +5,17 @@
   tasks:
     - name: init folder(delete folder)
       file:
-        path: "/OracalAutoDB/{{ project }}/"
+        path: "{{ work_path }}/{{ project }}/"
         state: absent
     - name: init folder(create folder)
       file:
-        path: "/OracalAutoDB/{{ project }}/"
+        path: "{{ work_path }}/{{ project }}/"
         state: directory
         
     - name: get .sql files(git clone)
       git:
         repo: "https://github.com/purelydinkum/{{ project }}"
-        dest: "/OracalAutoDB/{{ project }}"
+        dest: "{{ work_path }}/{{ project }}"
         clone: yes
         version: "{{ branch }}"
         
