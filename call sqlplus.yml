@@ -11,3 +11,9 @@
       file:
         path: "/OracalAutoDB/{{ project }}/"
         state: directory
+    - name: git clone
+      git:
+        repo: "https://github.com/purelydinkum/{{ project }}"
+        dest: "/OracalAutoDB/{{ project }}"
+        clone: yes
+        version: "{{ branch }}"
