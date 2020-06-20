@@ -1,6 +1,7 @@
 ---
 - name: testeeeee
   hosts: '{{ hosts_name }}'
+  no_log: true
 
   tasks:
     - name: test
