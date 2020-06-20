@@ -24,7 +24,7 @@
         dest: "{{ work_path }}/{{ project }}/"
         mode: '0755'
         state: directory
-        recurse : yes
+        recurse : no
         
     - name: recurse .sql file add "/"
       debug:
