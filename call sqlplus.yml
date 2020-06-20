@@ -19,10 +19,10 @@
         clone: yes
         version: "{{ branch }}"
         
-     - name: chmod .sql files
-       file:
-         dest: "{{ work_path }}/{{ project }}/*"
-         mode: '755'
+    - name: chmod .sql files
+      file:
+        dest: "{{ work_path }}/{{ project }}/*"
+        mode: '755'
     
     - name: recurse .sql file add "/"
       debug:
