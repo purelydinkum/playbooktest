@@ -18,14 +18,7 @@
         dest: "{{ work_path }}/{{ project }}"
         clone: yes
         version: "{{ branch }}"
-        
-    #- name: chmod .sql files
-      #file:
-        #dest: "{{ work_path }}/{{ project }}/"
-        #mode: '0755'
-        #state: directory
-        #recurse : no
-        
+   
     - name: chmod .sql files
       shell:
         chdir: "{{ work_path }}/{{ project }}/"
