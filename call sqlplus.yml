@@ -21,8 +21,8 @@
         
     - name: chmod .sql files
       file:
-        dest: "{{ work_path }}/{{ project }}/*"
-        mode: '755'
+        dest: "{{ work_path }}/{{ project }}/"
+        mode: '0755'
     
     - name: recurse .sql file add "/"
       debug:
