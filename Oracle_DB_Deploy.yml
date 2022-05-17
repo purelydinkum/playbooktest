@@ -7,5 +7,5 @@
       shell:
        cmd: |
          . ~/.bash_profile;
-         echo --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8
+         echo --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --dbtype ORACLE --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8
          /opt/sqldepoly/ORACLEDepoly.py --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8
