@@ -1,6 +1,6 @@
 ---
 - name: DB_Deploy
-  hosts: cicdttow
+  hosts: 172.16.14.142
 
   tasks:
     - name: call python
