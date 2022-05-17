@@ -1,0 +1,11 @@
+---
+- name: DB_Deploy
+  hosts: cicdttow
+
+  tasks:
+    - name: call python
+      no_log: true
+      shell:
+       cmd: |
+         . ~/.bash_profile;
+         echo --ticket_no {{ ticket_no }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --env {{ env }}
