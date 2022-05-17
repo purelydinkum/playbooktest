@@ -1,10 +1,11 @@
 ---
 - name: DB_Deploy
-  hosts: 172.16.14.142
+  hosts: 172.16.14.141
 
   tasks:
     - name: call python
       shell:
        cmd: |
          . ~/.bash_profile;
-         echo --ticket_no {{ ticket_no }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --env {{ env }}
+         echo --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8
+         /opt/sqldepoly/ORACLEDepoly.py --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8
