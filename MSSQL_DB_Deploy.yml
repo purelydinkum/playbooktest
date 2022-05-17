@@ -7,5 +7,5 @@
       shell:
        cmd: |
          . ~/.bash_profile;
-         echo --ticket_number_path_number_path {{ ticket_number_path_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --dbtype MSSQL --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
-         /opt/sqldepoly/MSSQLDepoly.py --ticket_number_path_number_path {{ ticket_number_path_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
+         echo --ticket_number_path {{ ticket_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --dbtype MSSQL --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
+         /opt/sqldepoly/MSSQLDepoly.py --ticket_number_path {{ ticket_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
