@@ -1,6 +1,5 @@
 ---
 - name: DB_Deploy
-  hosts: cicdttow
 
   tasks:
     - name: call python
