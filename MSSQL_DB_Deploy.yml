@@ -1,11 +1,11 @@
 ---
 - name: DB_Deploy
-  hosts: "{{ hosts_name }}"
+  hosts: 172.16.14.141
 
   tasks:
     - name: call python
-      no_log: true
       shell:
        cmd: |
          . ~/.bash_profile;
-         echo --ticket_no {{ ticket_no }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --env {{ env }}
+         echo --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --dbtype MSSQL --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
+         /opt/sqldepoly/MSSQLDepoly.py --tickiet_number_path {{ tickiet_number_path }} --projname {{ projname }} --Jenkins_Base_Id_Name {{ Jenkins_Base_Id_Name }} --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8
