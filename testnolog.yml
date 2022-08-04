@@ -12,13 +12,13 @@
          . ~/.bash_profile;
          /tmp/test.sh;
     - name: python Standard Out
-      shell: 'echo "{{ r_python.stdout }}"'
+      debug: 
+        msg: '{{ r_python.stdout }}'
       when: r_python.stdout != ""
-      ignore_errors: True
     - name: python Standard Error
-      shell: '>&2 echo "{{ r_python.stderr }}"'
+      debug:
+        msg: '{{ r_python.stderr }}'
       when: r_python.stderr != ""
-      ignore_errors: True
     - fail:
         msg: "error shell, Please check the debug messages."
-      when: r_python.stderr_lines != ""
+      when: r_python.rc != 0
