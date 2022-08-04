@@ -11,12 +11,3 @@
        cmd: |
          . ~/.bash_profile;
          /tmp/test.sh;
-    - debug:
-        msg: 'Standard Out:{{ r_python.stdout }}'
-      when: r_python.stdout != ""
-    - debug:
-        msg: 'Standard Error:{{ r_python.stderr }}'
-      when: r_python.stderr != ""
-    - fail:
-        msg: "error shell."
-      when: r_python.stderr != ""
