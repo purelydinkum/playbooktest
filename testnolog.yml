@@ -1,0 +1,24 @@
+---
+- name: DB_Deploy
+  hosts: 172.16.14.141
+
+  tasks:
+    - name: call python
+      shell:
+       ignore_errors: True
+       no_log: True
+       register: r_python
+       cmd: |
+         . ~/.bash_profile;
+         /tmp/test.sh;
+    - debug:
+        msg: '{{ r_python.stderr }}'
+      when: r_python.stderr != ""
+
+    - debug:
+        msg: '{{ r_python.stdout }}'
+      when: r_python.stdout != ""
+
+    - fail:
+        msg: "error shell."
+      when: r_python.stderr != ""
