@@ -4,9 +4,6 @@
 
   tasks:
     - name: call python
-      ignore_errors: True
-      no_log: True
-      register: r_python
       shell:
        cmd: |
          . ~/.bash_profile;
