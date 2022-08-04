@@ -11,14 +11,14 @@
        cmd: |
          . ~/.bash_profile;
          /tmp/test.sh;
-    - name: python Standard Out
+    - name: python standard out
       debug: 
-        msg: '{{ r_python.stdout }}'
+        var: '{{ r_python.stdout }}'
       when: r_python.stdout != ""
-    - name: python Standard Error
+    - name: python standard error
       debug:
-        msg: '{{ r_python.stderr }}'
+        var: '{{ r_python.stderr }}'
       when: r_python.stderr != ""
     - fail:
-        msg: "error shell, Please check the debug messages."
+        msg: "Error shell, please check the debug messages."
       when: r_python.rc != 0
