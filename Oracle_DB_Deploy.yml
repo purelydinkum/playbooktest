@@ -4,8 +4,20 @@
 
   tasks:
     - name: call python
+      ignore_errors: True
+      no_log: True
+      register: r_python
       shell:
        cmd: |
          . ~/.bash_profile;
-         echo /opt/sqldepoly/ORACLEDepoly.py --num '{{ num }}' --key {{ key }} --projname {{ projname }} --env {{ env }} --timestamp {{ timestamp }} --Log_Name {{ Jenkins_Base_Id_Name }}_{{  tower_job_template_name  }}_{{  tower_job_id  }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8;
+         #echo /opt/sqldepoly/ORACLEDepoly.py --num '{{ num }}' --key {{ key }} --projname {{ projname }} --env {{ env }} --timestamp {{ timestamp }} --Log_Name {{ Jenkins_Base_Id_Name }}_{{  tower_job_template_name  }}_{{  tower_job_id  }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8;
          /opt/sqldepoly/ORACLEDepoly.py --num '{{ num }}' --key {{ key }} --projname {{ projname }} --env {{ env }} --timestamp {{ timestamp }}  --Log_Name {{ Jenkins_Base_Id_Name }}_{{  tower_job_template_name  }}_{{  tower_job_id  }} --serverip {{ db_cicd_oracle_host }} --port {{ db_cicd_oracle_port }} --dbuser {{ db_cicd_oracle_username }} --dbpasswd {{ db_cicd_oracle_password }} --dbdsn {{ db_cicd_oracle_sid }} --encoding utf-8;
+    - name: python standard out
+      debug: 
+        msg: '{{ r_python.stdout_lines }}'
+    - name: python standard error
+      debug:
+        msg: '{{ r_python.stderr_lines }}'
+    - fail:
+        msg: "Error shell, please check the debug messages."
+      when: r_python.rc != 0
