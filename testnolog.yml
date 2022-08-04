@@ -13,12 +13,12 @@
          /tmp/test.sh;
     - name: python Standard Out
       debug:
-        stdout: '{{ r_python.stdout_lines }}'
+        msg: '{{ r_python.stdout_lines }}'
       when: r_python.stdout_lines != ""
     - name: python Standard Error
       debug:
-        msg: '{{ r_python.stderr }}'
-      when: r_python.stderr != ""
+        msg: '{{ r_python.stderr_lines }}'
+      when: r_python.stderr_lines != ""
     - fail:
         msg: "error shell, Please check the debug messages."
-      when: r_python.stderr != ""
+      when: r_python.stderr_lines != ""
