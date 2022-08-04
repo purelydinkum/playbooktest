@@ -14,11 +14,9 @@
     - name: python standard out
       debug: 
         msg: '{{ r_python.stdout_lines }}'
-      when: r_python.stdout_lines != ""
     - name: python standard error
       debug:
         msg: '{{ r_python.stderr_lines }}'
-      when: r_python.stderr_lines != ""
     - fail:
         msg: "Error shell, please check the debug messages."
       when: r_python.rc != 0
