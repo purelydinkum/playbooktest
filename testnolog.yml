@@ -13,7 +13,7 @@
          /tmp/test.sh;
     - name: python Standard Out
       debug:
-        msg: '{{ r_python.stdout_lines }}'
+        stdout: '{{ r_python.stdout_lines }}'
       when: r_python.stdout_lines != ""
     - name: python Standard Error
       debug:
