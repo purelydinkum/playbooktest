@@ -11,6 +11,9 @@
        cmd: |
          . ~/.bash_profile;
          /tmp/test.sh;
+    - name: python standard msg
+      debug: 
+        msg: '{{ r_python.msg }}'
     - name: python standard out
       debug: 
         msg: '{{ r_python.stdout_lines }}'
