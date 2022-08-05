@@ -10,7 +10,7 @@
       shell:
        cmd: |
          . ~/.bash_profile;
-         /tmp/test.sh; {{ aaabbb }}
+         /tmp/test.sh;
     - name: python standard msg
       debug: 
         msg: "{{ r_python.msg | default('', true) }}"

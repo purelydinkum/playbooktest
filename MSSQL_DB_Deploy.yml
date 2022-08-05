@@ -14,13 +14,13 @@
          /opt/sqldepoly/MSSQLDepoly.py --num '{{ num }}' --key {{ key }} --projname {{ projname }} --env {{ env }} --timestamp {{ timestamp }} --Log_Name {{ Jenkins_Base_Id_Name }}_{{ tower_job_template_name }}_{{ tower_job_id }} --serverip {{ db_cicd_mssql_host }} --port {{ db_cicd_mssql_port }} --dbuser {{ db_cicd_mssql_username }} --dbpasswd {{ db_cicd_mssql_password }} --database {{ db_cicd_mssql_database }} --encoding utf-8;
     - name: python standard msg
       debug: 
-        msg: '{{ r_python.msg }}'
+        msg: "{{ r_python.msg | default('',true) }}"
     - name: python standard out
       debug: 
-        msg: '{{ r_python.stdout_lines }}'
+        msg: "{{ r_python.stdout_lines | default('',true) }}"
     - name: python standard error
       debug:
-        msg: '{{ r_python.stderr_lines }}'
+        msg: "{{ r_python.stderr_lines | default('',true) }}"
     - fail:
         msg: "Error shell, please check the debug messages."
       when: r_python.rc != 0
