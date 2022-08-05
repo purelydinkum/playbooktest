@@ -14,15 +14,15 @@
     - name: python standard msg
       debug: 
         msg: '{{ r_python.msg }}'
-      when: r_python.msg != null
+      when: r_python.msg != None
     - name: python standard out
       debug: 
         msg: '{{ r_python.stdout_lines }}'
-      when: r_python.stdout_lines != null
+      when: r_python.stdout_lines != None
     - name: python standard error
       debug:
         msg: '{{ r_python.stderr_lines }}'
-      when: r_python.stderr_lines != null
+      when: r_python.stderr_lines != None
     - fail:
         msg: "Error shell, please check the debug messages."
       when: r_python.rc != 0
