@@ -1,6 +1,6 @@
 ---
 - name: DB_Deploy
-  hosts: hosts
+  hosts: all
 
   tasks:
     - name: call python
