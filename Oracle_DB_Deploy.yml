@@ -1,6 +1,5 @@
 ---
 - name: DB_Deploy
-  hosts: 172.16.14.141
 
   tasks:
     - name: call python
