@@ -6,7 +6,7 @@
   tasks:
     - name: Get environment
       debug:
-      msg: "{{ ansible_env }}"
+        msg: "{{ ansible_env }}"
       
     - name: Git Clone from the jump server
       run_once: yes
