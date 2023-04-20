@@ -6,18 +6,17 @@
   tasks:
     - name: Git Clone from the jump server
       run_once: yes
-      shell:
-       cmd: |
-        . ~/.bash_profile;
-        mkdir -p tmp
-        echo testtttaaaaaa > tmp/test_ansible.txt
+      git:
+        repo: "http://172.17.12.11:10101/r/Cicd/Demo_Project.git "
+        clone: yes
+        dest: "Git_File_Sync"
       when: inventory_hostname == '000-Git-Server' 
 
     - name: Fetch the file from the jump server to ansible master 
       run_once: yes
-      fetch: src=tmp/test_ansible.txt dest=buffer/ flat=yes
+      fetch: src=Git_File_Sync/README.md dest=buffer/ flat=yes
       when: inventory_hostname == '000-Git-Server'
 
     - name: Copy the file from ansible master to target server
-      copy: src=buffer/test_ansible.txt dest=/tmp/
+      copy: src=buffer/README.md dest=/tmp/
       when: inventory_hostname != '000-Git-Server'
