@@ -1,0 +1,21 @@
+---
+- name: File Sync
+  hosts: all
+
+  tasks:
+    - name: Git Clone from the jump server
+       run_once: yes
+       shell: src=/tmp/app01-to-app02.jar dest=buffer/ flat=yes
+        cmd: |
+         . ~/.bash_profile;
+         mkdir -p tmp
+         echo testttt > tmp/test_ansible.txt
+       when: "{{ inventory_hostname == '172.17.12.24' }}"
+       
+    - name: Fetch the file from the jump server to ansible master 
+       run_once: yes
+       fetch: src=tmp/test_ansible.txt dest=buffer/ flat=yes
+       when: "{{ inventory_hostname == '172.17.12.24' }}"
+
+     - name: Copy the file from ansible master to target server
+       copy: src=buffer/test_ansible.txt dest=/tmp/
