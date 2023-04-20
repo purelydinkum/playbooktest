@@ -10,7 +10,12 @@
        cmd: |
         . ~/.bash_profile;
         mkdir -p tmp
-        echo testttt > tmp/test_ansible.txt
+        echo testtttaaaaaa > tmp/test_ansible.txt
+      when: "{{ inventory_hostname == '000-Git-Server' }}"
+
+    - name: Fetch the file from the jump server to ansible master 
+      run_once: yes
+      fetch: src=tmp/test_ansible.txt dest=buffer/ flat=yes
       when: "{{ inventory_hostname == '000-Git-Server' }}"
 
     - name: Copy the file from ansible master to target server
