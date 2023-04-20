@@ -4,7 +4,6 @@
 
   tasks:
     - name: Git Clone from the jump server
-      run_once: yes
       shell:
        cmd: |
         . ~/.bash_profile;
