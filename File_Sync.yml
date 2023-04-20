@@ -4,10 +4,14 @@
   order: sorted
 
   tasks:
+    - name: Get environment
+      debug:
+      msg: "{{ ansible_env }}"
+      
     - name: Git Clone from the jump server
       run_once: yes
       git:
-        repo: "http://172.17.12.11:10101/r/Cicd/Demo_Project.git "
+        repo: "http://admin:{{ token }}172.17.12.11:10101/r/Cicd/Demo_Project.git"
         clone: yes
         dest: "Git_File_Sync"
       when: inventory_hostname == '000-Git-Server' 
