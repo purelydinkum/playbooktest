@@ -11,9 +11,9 @@
     - name: Git Clone from the jump server
       run_once: yes
       git:
-        repo: "http://admin:{{ token }}172.17.12.11:10101/r/Cicd/Demo_Project.git"
+        repo: "http://admin:admin@172.17.12.11:10101/r/Cicd/Demo_Project.git"
         clone: yes
-        dest: "Git_File_Sync"
+        dest: "Git_File_Sync/"
       when: inventory_hostname == '000-Git-Server' 
 
     - name: Fetch the file from the jump server to ansible master 
