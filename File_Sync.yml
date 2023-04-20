@@ -5,7 +5,7 @@
   tasks:
     - name: Git Clone from the jump server
       run_once: yes
-      shell: src=/tmp/app01-to-app02.jar dest=buffer/ flat=yes
+      shell:
        cmd: |
         . ~/.bash_profile;
         mkdir -p tmp
