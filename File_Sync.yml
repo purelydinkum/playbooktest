@@ -10,3 +10,11 @@
         mkdir -p tmp
         echo testttt > tmp/test_ansible.txt
       when: "{{ inventory_hostname == '172.17.12.24' }}"
+       
+    - name: Fetch the file from the jump server to ansible master 
+      fetch: src=tmp/test_ansible.txt dest=buffer/ flat=yes
+      when: "{{ inventory_hostname == '172.17.12.24' }}"
+
+    - name: Copy the file from ansible master to target server
+      copy: src=buffer/test_ansible.txt dest=/tmp/
+      when: "{{ inventory_hostname != '172.17.12.24' }}"
