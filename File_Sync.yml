@@ -20,4 +20,4 @@
 
     - name: Copy the file from ansible master to target server
       copy: src=buffer/test_ansible.txt dest=/tmp/
-      when: " inventory_hostname != '000-Git-Server' "
+      when: inventory_hostname != '000-Git-Server'
