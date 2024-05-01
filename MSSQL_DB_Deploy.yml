@@ -5,7 +5,7 @@
   tasks:
     - name: call python
       ignore_errors: True
-      no_log: True
+      no_log: False
       register: r_python
       shell:
        cmd: |
